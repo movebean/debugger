@@ -9,6 +9,6 @@ func Where() string {
 	return fmt.Sprintf("%s:%d", file, line)
 }
 
-func Time(begin time.Time) time.Duration {
-	return time.Now().Sub(begin)
+func Time(begin time.Time) {
+	fmt.Println("Func Duration: ", time.Now().Sub(begin))
 }
