@@ -5,7 +5,7 @@ import "fmt"
 import "time"
 
 func Where() string {
-	return where(1)
+	return where(2)
 }
 
 func where(ignore int) string {
@@ -14,5 +14,9 @@ func where(ignore int) string {
 }
 
 func Time(begin time.Time) {
-	fmt.Printf("Func Duration: %v(begin at %s)\n", time.Now().Sub(begin), where(2))
+	fmt.Printf("Func Duration: %v\n", time.Now().Sub(begin))
+}
+
+func TimePrompt(begin time.Time, prompt string) {
+	fmt.Printf("Func Duration: %v(begin at %s)\n", time.Now().Sub(begin), prompt)
 }
