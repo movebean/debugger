@@ -5,10 +5,14 @@ import "fmt"
 import "time"
 
 func Where() string {
-	var _, file, line, _ = runtime.Caller(1)
+	return where(1)
+}
+
+func where(ignore int) string {
+	var _, file, line, _ = runtime.Caller(ignore)
 	return fmt.Sprintf("%s:%d", file, line)
 }
 
 func Time(begin time.Time) {
-	fmt.Printf("Func Duration: %v(begin at %s)", time.Now().Sub(begin), Where())
+	fmt.Printf("Func Duration: %v(begin at %s)\n", time.Now().Sub(begin), where(2))
 }
