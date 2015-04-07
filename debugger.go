@@ -10,5 +10,5 @@ func Where() string {
 }
 
 func Time(begin time.Time) {
-	fmt.Println("Func Duration: ", time.Now().Sub(begin))
+	fmt.Printf("Func Duration: %v(begin at %s)", time.Now().Sub(begin), Where())
 }
